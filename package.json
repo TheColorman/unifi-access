@@ -1,7 +1,7 @@
 {
   "name": "unifi-access",
   "type": "module",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "displayName": "UniFi Access API",
   "description": "A soon-to-be-almost-complete implementation of the UniFi Access API.",
   "author": {
@@ -46,13 +46,19 @@
     "ufa": "dist/util/ufa.js"
   },
   "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.md"
+  ],
   "scripts": {
     "build": "shx rm -rf ./dist && tsc && shx chmod a+x ./dist/util/**.js",
     "build-docs": "shx rm -f ./docs/[^CO]*.md && npx typedoc",
     "clean": "shx rm -rf ./dist",
     "lint": "eslint --max-warnings=${ESLINT_MAX_WARNINGS:-\"-1\"} eslint.config.mjs src/**.ts src/util/**.ts",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
     "postpublish": "npm run clean",
-    "prepublishOnly": "npm run lint && npm run build",
     "test": "eslint src/**.ts"
   },
   "devDependencies": {
