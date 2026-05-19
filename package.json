@@ -68,7 +68,7 @@
     "typescript-eslint": "8.53.1"
   },
   "dependencies": {
-    "undici": "7.19.0"
+    "undici": "7.25.0"
   },
   "overrides": {
     "@types/readable-stream": "4.0.23"
